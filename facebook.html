@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Tạo tài khoản mới</title>
+    <style>
+        /* Reset mặc định và thiết lập body */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container chính */
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        /* Tiêu đề Facebook */
+        .facebook-title {
+            color: #1877f2;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Tiêu đề form và phụ đề */
+        .form-title {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #606770;
+            margin-bottom: 20px;
+        }
+
+        /* Form nhập liệu */
+        .signup-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #birthday {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Tùy chọn giới tính */
+        .gender {
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .gender label {
+            margin-right: 10px;
+        }
+
+        /* Nút Đăng ký */
+        .signup-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #42b72a;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .signup-btn:hover {
+            background-color: #36a420;
+        }
+
+        /* Lời nhắc đăng nhập */
+        .login-prompt {
+            margin-top: 20px;
+            color: #1877f2;
+            cursor: pointer;
+        }
+
+        .login-prompt:hover {
+            text-decoration: underline;
+        }
+
+        /* Style cho các dropdown */
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Style cho phần chính sách */
+        .policy {
+            font-size: 12px;
+            color: #606770;
+            margin-top: 10px;
+        }
+
+        .policy a {
+            color: #1877f2;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="facebook-title">facebook</h1>
+        <h2 class="form-title">Tạo tài khoản mới</h2>
+        <p class="subtitle">Nhanh chóng và dễ dàng</p>
+
+        <form class="signup-form">
+            <input type="text" placeholder="Họ" required>
+            <input type="text" placeholder="Tên" required>
+            <input type="text" placeholder="Số di động hoặc email" required>
+            <input type="password" placeholder="Mật khẩu mới" required>
+
+            <label for="birthday">Ngày sinh</label>
+            <input type="date" id="birthday" value="2010-09-10" required>
+
+            <div class="gender">
+                <label><input type="radio" name="gender" value="Nữ"> Nữ</label>
+                <label><input type="radio" name="gender" value="Nam"> Nam</label>
+                <label><input type="radio" name="gender" value="Tùy chỉnh"> Tùy chỉnh</label>
+            </div>
+
+            <select>
+                <option selected>Anh ấy: "Chúc anh ấy sinh nhật vui vẻ!"</option>
+                <option>Chị ấy: "Chúc chị ấy sinh nhật vui vẻ!"</option>
+                <option>Họ: "Chúc họ sinh nhật vui vẻ!"</option>
+            </select>
+
+            <input type="text" placeholder="Giới tính (không bắt buộc)">
+
+            <div class="policy">
+                Những người dùng dịch vụ của chúng tôi có thể đã tải thông tin liên hệ của bạn lên Facebook. 
+                <a href="#">Tìm hiểu thêm</a>.
+            </div>
+            <div class="policy">
+                Bằng cách nhấp vào Đăng ký, bạn đồng ý với Điều khoản, Chính sách quyền riêng tư và Chính sách cookie của chúng tôi. Bạn có thể nhận được thông báo từ chúng tôi qua SMS và hủy nhận bất kỳ lúc nào.
+            </div>
+
+            <button type="submit" class="signup-btn">Đăng ký</button>
+        </form>
+
+        <p class="login-prompt">Bạn đã có tài khoản ư?</p>
+    </div>
+</body>
+</html>
