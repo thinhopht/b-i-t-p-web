@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Tạo tài khoản mới</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        .facebook-title {
+            color: #1877f2;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .form-title {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #606770;
+            margin-bottom: 20px;
+        }
+
+        .signup-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #birthday {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .gender {
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .gender label {
+            margin-right: 10px;
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #42b72a;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .signup-btn:hover {
+            background-color: #36a420;
+        }
+
+        .login-prompt {
+            margin-top: 20px;
+            color: #1877f2;
+            cursor: pointer;
+        }
+
+        .login-prompt:hover {
+            text-decoration: underline;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .policy {
+            font-size: 12px;
+            color: #606770;
+            margin-top: 10px;
+        }
+
+        .policy a {
+            color: #1877f2;
+            text-decoration: none;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="facebook-title">facebook</h1>
+        <h2 class="form-title">Tạo tài khoản mới</h2>
+        <p class="subtitle">Nhanh chóng và dễ dàng</p>
+
+        <form class="signup-form" id="registerForm">
+            <div id="errorMessage" class="error">Vui lòng điền đầy đủ thông tin!</div>
+            
+            <input type="text" id="ho" placeholder="Họ" required>
+            <input type="text" id="ten" placeholder="Tên" required>
+            <input type="text" id="email" placeholder="Số di động hoặc email" required>
+            <input type="password" id="password" placeholder="Mật khẩu mới" required>
+
+            <label for="birthday">Ngày sinh</label>
+            <input type="date" id="birthday" value="2010-09-10" required>
+
+            <div class="gender">
+                <label><input type="radio" name="gender" value="Nữ"> Nữ</label>
+                <label><input type="radio" name="gender" value="Nam"> Nam</label>
+                <label><input type="radio" name="gender" value="Tùy chỉnh"> Tùy chỉnh</label>
+            </div>
+
+            <button type="button" class="signup-btn" onclick="validateForm()">Đăng ký</button>
+        </form>
+
+        <p class="login-prompt">Bạn đã có tài khoản ư?</p>
+    </div>
+
+    <script>
+        function validateForm() {
+            // Lấy giá trị các trường
+            var ho = document.getElementById('ho').value;
+            var ten = document.getElementById('ten').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var birthday = document.getElementById('birthday').value;
+            var genderElements = document.getElementsByName('gender');
+            var gender = "";
+
+            // Lấy giá trị giới tính
+            for (var i = 0; i < genderElements.length; i++) {
+                if (genderElements[i].checked) {
+                    gender = genderElements[i].value;
+                    break;
+                }
+            }
+
+            // Kiểm tra nếu bất kỳ trường nào trống
+            if (!ho || !ten || !email || !password || !birthday || !gender) {
+                document.getElementById('errorMessage').style.display = "block";
+            } else {
+                document.getElementById('errorMessage').style.display = "none";
+                alert("Xin chào " + ho + " " + ten + ", sinh ngày " + birthday + ", giới tính: " + gender + ", đã đăng ký thành công!");
+            }
+        }
+    </script>
+</body>
+</html>
